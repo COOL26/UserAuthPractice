@@ -37,6 +37,10 @@ nav .logo img {
   margin-top: 22px;
 }
 
+#menu {
+  cursor: pointer;
+}
+
 /* headerInfo-Box */
 
 .headerInfo-Box {
