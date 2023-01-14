@@ -1,4 +1,4 @@
-@media only screen and (min-width: 802px) {
+@media only screen and (min-width: 702px) {
   .heroImage {
     width: 50%;
     height: auto;
@@ -18,7 +18,11 @@
   .blue-btn {
     text-align: center;
     margin: 0;
+    min-width: 115px;
     max-width: 25%;
+  }
+  .blue-btn:hover {
+    background-color: rgb(8, 81, 184);
   }
   .headerInfo-Box h1 {
     font-size: 42px;
@@ -26,6 +30,7 @@
   .headerInfo-Box p {
     font-size: 21px;
     word-spacing: 5px;
+    color: rgb(94, 93, 93);
   }
   nav {
     max-width: 1200px;
@@ -44,6 +49,7 @@
     letter-spacing: 1.5px;
   }
   .company-logos img {
+    min-width: 10%;
     max-width: 15%;
   }
   .company-logos {
