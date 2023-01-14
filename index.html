@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,200"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaQuery.css" />
     <script src="script.js" defer></script>
     <title>Usability Hub Clone</title>
   </head>
@@ -17,34 +18,39 @@
       <div class="banner">
         <p>Figma prototype testing just got a whole lot better! Read more</p>
       </div>
-      <nav>
-        <div class="logo">
-          <img src="assets/asset 1.png" alt="UsabilityHub logo" />
+      <div class="full-nav">
+        <nav>
+          <div class="logo">
+            <img src="assets/asset 1.png" alt="UsabilityHub logo" />
+          </div>
+          <span class="material-symbols-outlined" id="menu"> menu </span>
+        </nav>
+        <div class="cover">
+          <ul>
+            <li>Product</li>
+            <li>Customers</li>
+            <li>Pricing</li>
+            <li>Resources</li>
+            <li style="text-align: center; margin: 0 auto">
+              <a href="#" class="blue-btn">Sign in</a>
+            </li>
+            <li style="text-align: center; margin: 0 auto">
+              <a href="#" class="transparent-btn">Sign up</a>
+            </li>
+          </ul>
         </div>
-        <span class="material-symbols-outlined" id="menu"> menu </span>
-      </nav>
-      <div class="cover">
-        <ul>
-          <li>Product</li>
-          <li>Customers</li>
-          <li>Pricing</li>
-          <li>Resources</li>
-          <li style="text-align: center; margin: 0 auto">
-            <a href="#" class="blue-btn">Sign in</a>
-          </li>
-          <li style="text-align: center; margin: 0 auto">
-            <a href="#" class="transparent-btn">Sign up</a>
-          </li>
-        </ul>
       </div>
-      <div class="heroImage"><img src="assets/asset 2.png" alt="" /></div>
-      <div class="headerInfo-Box">
-        <h1>Design confidently.</h1>
-        <p>
-          UsabilityHub is a remote user research platform that takes the
-          guesswork out of design decisions by validating them with real users.
-        </p>
-        <a href="#" class="blue-btn">Get Started</a>
+      <div class="heroSection">
+        <div class="heroImage"><img src="assets/asset 2.png" alt="" /></div>
+        <div class="headerInfo-Box">
+          <h1>Design confidently.</h1>
+          <p>
+            UsabilityHub is a remote user research platform that takes the
+            guesswork out of design decisions by validating them with real
+            users.
+          </p>
+          <a href="#" class="blue-btn">Get Started</a>
+        </div>
       </div>
       <div class="companies-section">
         <h2>
@@ -54,7 +60,7 @@
         <div class="company-logos">
           <img id="amazon" src="assets/asset 3.png" alt="amazon logo" />
           <img id="amazon" src="assets/asset 4.png" alt="google logo" />
-          <img id="amazon" src="assets/asset 5.png" alt="task rabbit logo" />
+          <img id="task" src="assets/asset 5.png" alt="task rabbit logo" />
           <img id="amazon" src="assets/asset 6.png" alt="air table logo" />
           <img id="boxLogo" src="assets/asset 7.png" alt="box logo" />
           <img id="godaddy" src="assets/asset 8.svg" alt="godaddy logo" />

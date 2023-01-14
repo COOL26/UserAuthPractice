@@ -1,2 +1,62 @@
-@media only screen and (max-width: 800px) {
+@media only screen and (min-width: 802px) {
+  .heroImage {
+    width: 50%;
+    height: auto;
+  }
+  .heroSection {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 32px auto;
+  }
+  .headerInfo-Box {
+    text-align: left;
+    width: 45%;
+  }
+  .blue-btn {
+    text-align: center;
+    margin: 0;
+    max-width: 25%;
+  }
+  .headerInfo-Box h1 {
+    font-size: 42px;
+  }
+  .headerInfo-Box p {
+    font-size: 21px;
+    word-spacing: 5px;
+  }
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .full-nav {
+    display: block;
+  }
+  #menu {
+    display: none;
+  }
+  .companies-section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(94, 93, 93);
+    letter-spacing: 1.5px;
+  }
+  .company-logos img {
+    max-width: 15%;
+  }
+  .company-logos {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #task {
+    max-width: 15%;
+  }
+  #boxLogo {
+    max-width: 10%;
+  }
 }

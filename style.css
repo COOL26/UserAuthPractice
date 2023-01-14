@@ -27,6 +27,7 @@ nav {
 
 nav .logo img {
   width: 50%;
+  max-width: 400px;
   height: auto;
   padding: 18px 10px;
 }
