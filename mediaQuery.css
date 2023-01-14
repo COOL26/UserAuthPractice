@@ -20,6 +20,10 @@
     margin: 0;
     min-width: 115px;
     max-width: 25%;
+    margin-right: 22px;
+  }
+  .cover ul li.noUse {
+    display: none;
   }
   .blue-btn:hover {
     background-color: rgb(8, 81, 184);
@@ -64,5 +68,37 @@
   }
   #boxLogo {
     max-width: 10%;
+  }
+
+  .full-nav {
+    display: flex;
+  }
+  .cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    position: static;
+    background-color: transparent;
+  }
+  .cover ul {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .transparent-btn {
+    background-color: transparent;
+    border: 2px solid rgb(19, 110, 236);
+    padding: 15px 20px;
+    display: block;
+    width: 100%;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(66, 65, 65);
+    border-radius: 3px;
+  }
+  .transparent-btn:hover {
+    background-color: whitesmoke;
   }
 }
