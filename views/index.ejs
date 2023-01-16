@@ -10,11 +10,13 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaQuery.css" />
+    <link rel="stylesheet" href="modal.css" />
     <script src="script.js" defer></script>
     <title>Usability Hub Clone</title>
   </head>
   <body>
     <header>
+      <section id="backdrop"></section>
       <div class="banner">
         <p>Figma prototype testing just got a whole lot better! Read more</p>
       </div>
@@ -49,7 +51,7 @@
             guesswork out of design decisions by validating them with real
             users.
           </p>
-          <a href="#" class="blue-btn">Get Started</a>
+          <a href="#" class="blue-btn" id="getStartedBtn">Get Started</a>
         </div>
       </div>
       <div class="companies-section">
@@ -67,6 +69,11 @@
           <img id="amazon" src="assets/asset 9.png" alt="asana logo" />
         </div>
       </div>
+      <section id="modal">
+        <p>You are not authenticated, please sign in to access the resources</p>
+        <a href="#" class="blue-btn">Sign in</a>
+        <a href="#" class="transparent-btn">Sign up</a>
+      </section>
     </header>
   </body>
 </html>

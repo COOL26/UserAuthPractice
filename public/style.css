@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .banner {
   text-align: center;
   background-color: rgb(214, 47, 103);
