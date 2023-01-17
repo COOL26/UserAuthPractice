@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
+const db = require("./data/database"); // connection of this server to mongodb db.
+
 app.use(express.urlencoded({ extended: false })); // for parsing user form data (text)
 
 app.set("views", path.join(__dirname, "views")); // for letting the ejs know where our .ejs files are stored.
@@ -17,18 +19,27 @@ app.get("/signUp", (req, res) => {
   res.render("signUp");
 });
 
-app.post("/signUp", (req, res) => {
-  let username = req.body.username;
-  let email = req.body.email;
-  let password = req.body.password;
-  console.log(username);
-  console.log(email);
-  console.log(password);
-  res.redirect("/");
+app.post("/signUp", async (req, res) => {
+  const username = req.body.username;
+  const email = req.body.email;
+  const password = req.body.password;
+
+  const user = {
+    email: email,
+    password: password,
+  };
+
+  await db.getDb().collection("users").insertOne(user);
+
+  res.redirect("/signIn");
 });
 
 app.get("/signIn", (req, res) => {
   res.render("signIn");
 });
 
-app.listen(3000);
+app.post("/signIn", (req, res) => {});
+
+db.connectToDatabase().then(function () {
+  app.listen(3000);
+});
