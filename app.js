@@ -27,4 +27,8 @@ app.post("/signUp", (req, res) => {
   res.redirect("/");
 });
 
+app.get("/signIn", (req, res) => {
+  res.render("signIn");
+});
+
 app.listen(3000);
