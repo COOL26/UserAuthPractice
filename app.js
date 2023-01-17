@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const bcrypt = require("bcryptjs");
 
 const db = require("./data/database"); // connection of this server to mongodb db.
 
@@ -23,10 +24,11 @@ app.post("/signUp", async (req, res) => {
   const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
+  const hashedPassword = await bcrypt.hash(password, 12);
 
   const user = {
     email: email,
-    password: password,
+    password: hashedPassword,
   };
 
   await db.getDb().collection("users").insertOne(user);
