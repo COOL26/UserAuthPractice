@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const bcrypt = require("bcryptjs");
+const session = require("express-session"); // for establishing server side sessions
+const mongodbStore = require("connect-mongodb-session"); // for connecting mongodb database to the sessions, so that it can store sessions of the users(incoming request).
 
 const db = require("./data/database"); // connection of this server to mongodb db.
 
@@ -11,6 +13,23 @@ app.set("views", path.join(__dirname, "views")); // for letting the ejs know whe
 app.set("view engine", "ejs"); // for establishing the connection between ejs and web server
 
 app.use(express.static("public")); // for serving the static CSS and JS files
+
+const MongodbStore = mongodbStore(session); // buidling connection between mongodb and sessions
+
+const sessionStore = new MongodbStore({
+  uri: "mongodb://127.0.0.1:27017",
+  databaseName: "auth-demo",
+  collection: "sessions",
+});
+
+app.use(
+  session({
+    secret: "mySecret",
+    resave: false,
+    saveUninitialized: false,
+    store: sessionStore,
+  })
+);
 
 app.get("/", (req, res) => {
   res.render("index");
@@ -66,15 +85,15 @@ app.post("/signIn", async (req, res) => {
 
   if (!existingUser) {
     // checking if the user exist in our db or not
-    console.log("password not correct!");
+    alert("User already exist please signIn");
     return res.redirect("/signIn");
   }
   const isEqual = await bcrypt.compare(password, existingUser.password);
   if (!isEqual) {
-    console.log("password not correct!");
+    alert("Incorrect Password");
     return res.redirect("/signIn");
   }
-  console.log("User is authenticated!");
+  alert("User is authenticated!");
   res.redirect("/");
 });
 
