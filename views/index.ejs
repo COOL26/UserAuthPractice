@@ -16,7 +16,7 @@
   </head>
   <body>
     <header>
-      <section id="backdrop"></section>
+      <!-- <section id="backdrop"></section> -->
       <div class="banner">
         <p>Figma prototype testing just got a whole lot better! Read more</p>
       </div>
@@ -29,12 +29,19 @@
         </nav>
         <div class="cover">
           <ul>
-            <li class="noUse">Product</li>
-            <li class="noUse">Customers</li>
-            <li class="noUse">Pricing</li>
-            <li class="noUse">Resources</li>
             <li style="text-align: center; margin: 0 auto">
               <a href="/signIn" class="blue-btn">Sign in</a>
+            </li>
+            <li style="text-align: center; margin: 0 auto">
+              <form action="/signOut" method="POST">
+                <button
+                  type="submit"
+                  class="blue-btn"
+                  style="background-color: red; cursor: pointer; border: none"
+                >
+                  Sign Out
+                </button>
+              </form>
             </li>
             <li style="text-align: center; margin: 0 auto">
               <a href="/signUp" class="transparent-btn">Sign up</a>
@@ -51,7 +58,8 @@
             guesswork out of design decisions by validating them with real
             users.
           </p>
-          <a href="#" class="blue-btn" id="getStartedBtn">Get Started</a>
+          <!-- <a href="#" class="blue-btn" id="getStartedBtn">Get Started</a> -->
+          <a href="/admin" class="blue-btn" id="getStartedBtn">Admin</a>
         </div>
       </div>
       <div class="companies-section">
@@ -69,11 +77,11 @@
           <img id="amazon" src="assets/asset 9.png" alt="asana logo" />
         </div>
       </div>
-      <section id="modal">
+      <!-- <section id="modal">
         <p>You are not authenticated, please sign in to access the resources</p>
         <a href="/signIn" class="blue-btn">Sign in</a>
         <a href="/signUp" class="transparent-btn">Sign up</a>
-      </section>
+      </section> -->
     </header>
   </body>
 </html>

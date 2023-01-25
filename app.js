@@ -6,6 +6,7 @@ const session = require("express-session"); // for establishing server side sess
 const mongodbStore = require("connect-mongodb-session"); // for connecting mongodb database to the sessions, so that it can store sessions of the users(incoming request).
 
 const db = require("./data/database"); // connection of this server to mongodb db.
+const { render } = require("ejs");
 
 app.use(express.urlencoded({ extended: false })); // for parsing user form data (text)
 
@@ -85,15 +86,34 @@ app.post("/signIn", async (req, res) => {
 
   if (!existingUser) {
     // checking if the user exist in our db or not
-    alert("User already exist please signIn");
-    return res.redirect("/signIn");
+    console.log("User does not exist please signUp");
+    return res.redirect("/signUp");
   }
   const isEqual = await bcrypt.compare(password, existingUser.password);
   if (!isEqual) {
-    alert("Incorrect Password");
+    console.log("Incorrect Password");
     return res.redirect("/signIn");
   }
-  alert("User is authenticated!");
+  req.session.user = { id: existingUser._id, email: existingUser.email };
+  req.session.isAuthenticated = true;
+  req.session.save(function () {
+    console.log("User is authenticated!");
+    res.redirect("/");
+  });
+});
+
+app.get("/admin", (req, res) => {
+  //check the user ticket
+  if (!req.session.isAuthenticated) {
+    return res.status(401).render("401"); // status code for signaling that access was denied --> User tries to access some page where authentication was denied.
+  }
+  res.render("admin");
+});
+
+app.post("/signOut", (req, res) => {
+  // post request ke liye anchor tag se kaam nhi hota form hii banana padta hai.
+  req.session.user = null;
+  req.session.isAuthenticated = false;
   res.redirect("/");
 });
 
